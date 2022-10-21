@@ -1,0 +1,75 @@
+<app-menu></app-menu>
+<app-title title="Perfil > Bruno Araujo"></app-title>
+
+<div class="perfil">
+    <div class="container-perfil card-shadow">
+        <h2>Informações</h2>
+        <div class="info-pessoais">
+            <div class="infos">
+                <img src="assets/user.png" alt="image-person">
+                <p>Bruno Araujo</p>
+                <p>Platô</p>
+            </div>
+            <form formGroup="formLogin" class="example-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nome</mat-label>
+                    <input matInput>
+                </mat-form-field>
+        
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Telefone</mat-label>
+                    <input matInput>
+                </mat-form-field>
+        
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>E-mail</mat-label>
+                    <input matInput>
+                </mat-form-field>
+        
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Setor</mat-label>
+                    <input matInput>
+                </mat-form-field>
+    
+            </form>
+        </div>
+    </div>
+    <div class="table card-shadow">
+        <div class="conteudo-table">
+            <th>Equipamentos</th>
+            <div class="coluns">
+                <tr>
+                    <td>1</td>
+                    <td>radio</td>
+                    <td>01/10/2022</td>
+                    <td class="uso">Em uso</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>radio</td>
+                    <td>01/10/2022</td>
+                    <td class="uso">Em uso</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>radio</td>
+                    <td>01/10/2022</td>
+                    <td class="devolvido">Devolvido</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>radio</td>
+                    <td>01/10/2022</td>
+                    <td class="uso">Em uso</td>
+                </tr>
+            </div>
+        
+        </div>
+        <mat-paginator [length]="100"
+                  [pageSize]="10"
+                  aria-label="Select page">
+        </mat-paginator>
+    </div>
+</div>
+
+

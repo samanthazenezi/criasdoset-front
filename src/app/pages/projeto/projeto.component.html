@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+<app-title title="Cadastro Projeto"></app-title>
+<div class="container-perfil card-shadow">
+    <h2>Novo Projeto</h2>
+    <div class="info-pessoais">
+        <form formGroup="formLogin" class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nome do projeto</mat-label>
+                <input matInput>
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Empresa</mat-label>
+                <input matInput>
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Data de ínicio</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Descrição</mat-label>
+                <textarea matInput placeholder="Ex. Projeto feito na Bahia"></textarea>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="buttons">
+        <button mat-flat-button color="accent">Salvar</button>
+        <button mat-stroked-button [routerLink]="['/']">Cancelar</button>
+    </div>
+</div>
+

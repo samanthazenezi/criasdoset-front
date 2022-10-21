@@ -1,0 +1,36 @@
+<app-menu></app-menu>
+<app-title title="Cadastro Usuário"></app-title>
+<div class="container-perfil card-shadow">
+    <div class="info-pessoais">
+        <div class="infos">
+            <img src="assets/user.png" alt="image-person">
+            <p>Upload imagem</p>
+        </div>
+        <form formGroup="formLogin" class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput>
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Telefone</mat-label>
+                <input matInput>
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>E-mail</mat-label>
+                <input matInput>
+            </mat-form-field>
+    
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Setor</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="buttons">
+        <button mat-flat-button color="accent">Salvar</button>
+        <button mat-stroked-button [routerLink]="['/']">Cancelar</button>
+    </div>
+</div>
+

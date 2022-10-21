@@ -1,0 +1,30 @@
+<div class="geral-login">
+    <div class="image-login">
+        <img src="assets/image-login.png" alt="imagem-psicodelica-3D">
+    </div>
+    <div class="login-container">
+        <div class="titles">
+            <h1>Entrar</h1>
+            <h2>Conecte-se no sistema</h2>
+        </div>
+        
+        <form formGroup="formLogin" (ngSubmit)="salvar()" class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>E-mail</mat-label>
+                <input matInput placeholder="Ex. email@email.com">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Ex. password">
+            </mat-form-field>
+        </form>
+        <p>Esqueceu sua senha?</p>
+        <div class="buttons">
+            <button mat-flat-button color="accent">Entrar</button>
+            <p>ou</p>
+            <button mat-stroked-button>Cadastre-se</button>
+        </div>
+    </div>
+</div>
+

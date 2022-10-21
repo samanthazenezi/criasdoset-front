@@ -1,0 +1,16 @@
+.geral {
+    width: 100%;
+    height: auto;
+
+    background-color: #fff;
+}
+.geral h1 {
+    color: #262626;
+
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 100%;
+
+    padding-block: 2.2rem;
+    padding-left: 3rem;
+}

@@ -1,18 +1,4 @@
 <div class="menu">
-    <div class="menu-hamburguer">
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item [routerLink]="['/']">Painel</button>
-            <button mat-menu-item [routerLink]="['/controle/itens']">Cadastro de itens</button>
-            <button mat-menu-item [routerLink]="['/cadastro/usuario']">Cadastrar usuário</button>
-            <button mat-menu-item [routerLink]="['/cadastro/projeto']">Cadastrar projeto</button>
-            <button mat-menu-item [routerLink]="['/cadastro/item']">Cadastrar item</button>
-            <button mat-menu-item>Configurações</button>
-            
-          </mat-menu>
-    </div>
     <div class="conteudo-menu">
         <li><img src="assets/home.svg" alt="icon-home"><a [routerLink]="['/']">Painel</a></li>
         <li><img src="assets/list-1.svg" alt="icon-list"><a [routerLink]="['/controle/itens']">Controle Itens</a></li>
@@ -30,7 +16,7 @@
             <p>Bruno Araujo</p>
             <img src="assets/lapis.svg" alt="icone-editar">
         </button>
-        
+
     </div>
 </div>
 

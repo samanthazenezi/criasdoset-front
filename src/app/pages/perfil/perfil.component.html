@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-<app-title title="Perfil > Bruno Araujo"></app-title>
+<app-title [title]="perfilTitle"></app-title>
 
 <div class="perfil">
     <div class="container-perfil card-shadow">
@@ -7,8 +7,8 @@
         <div class="info-pessoais">
             <div class="infos">
                 <img src="assets/user.png" alt="image-person">
-                <p>Bruno Araujo</p>
-                <p>Platô</p>
+                <p>{{ perfil.name }}</p>
+                <p>{{ perfil.sector }}</p>
             </div>
             <form [formGroup]="formPerfil" class="example-form">
                 <mat-form-field class="example-full-width" appearance="fill">
@@ -36,31 +36,13 @@
     </div>
     <div class="table card-shadow">
         <div class="conteudo-table">
-            <th>Equipamentos</th>
-            <div class="coluns">
+            <th>Solicitações</th>
+            <div *ngFor="let item of perfil.orders" class="coluns">
                 <tr>
-                    <td>1</td>
-                    <td>radio</td>
-                    <td>01/10/2022</td>
-                    <td class="uso">Em uso</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>radio</td>
-                    <td>01/10/2022</td>
-                    <td class="uso">Em uso</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>radio</td>
-                    <td>01/10/2022</td>
-                    <td class="devolvido">Devolvido</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>radio</td>
-                    <td>01/10/2022</td>
-                    <td class="uso">Em uso</td>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.ItemName }}</td>
+                    <td>{{ item.AllocationDate }}</td>
+                    <td>{{ item.status }}</td>
                 </tr>
             </div>
 

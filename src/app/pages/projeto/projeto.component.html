@@ -3,7 +3,7 @@
 <div class="container-perfil card-shadow">
     <h2>Novo Projeto</h2>
     <div class="info-pessoais">
-        <form [formGroup]="formProjeto" class="example-form">
+        <form [formGroup]="formProjeto" (ngSubmit)="salvar()" class="example-form">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Nome do projeto</mat-label>
                 <input matInput formControlName="nomeProjeto">
@@ -25,11 +25,12 @@
                 <mat-label>Descrição</mat-label>
                 <textarea matInput placeholder="Ex. Projeto feito na Bahia" formControlName="descricao"></textarea>
             </mat-form-field>
+
+            <div class="buttons">
+              <button mat-flat-button color="accent">Salvar</button>
+              <button mat-stroked-button [routerLink]="['/']">Cancelar</button>
+          </div>
         </form>
-    </div>
-    <div class="buttons">
-        <button mat-flat-button color="accent">Salvar</button>
-        <button mat-stroked-button [routerLink]="['/']">Cancelar</button>
     </div>
 </div>
 

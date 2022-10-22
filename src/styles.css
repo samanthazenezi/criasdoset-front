@@ -30,11 +30,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .snackBarSucesso {
-  background: green;
+  background: #2a9d8f;
 }
 .snackBarErro {
-  background: Red;
+  background: #9e2a2b;
 }
 .snackBarAtencao {
-  background: yellow;
+  background: #f5cb5c;
 }

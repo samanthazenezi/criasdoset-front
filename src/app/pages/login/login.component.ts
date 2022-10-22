@@ -6,6 +6,7 @@ import { Token } from 'src/app/model/token.model';
 import { ApiService } from 'src/app/service/api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CookieService } from 'ngx-cookie-service';
+import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private api: ApiService,
     private router: Router,
-    private _snackBar: MatSnackBar,
+    private snackbar: SnackBarService,
     private cookie: CookieService) { }
 
   ngOnInit(): void {
@@ -42,11 +43,8 @@ export class LoginComponent implements OnInit {
       this.cookie.set("token", token.token, date)
       this.router.navigateByUrl("")
     },
-    error => { this.openSnackBar("Usuário ou senha inválidos", "Ok", )}
+    error => { this.snackbar.error("Usuário ou senha inválidos.")}
     )
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, { duration: 5000 });
-  }
 }

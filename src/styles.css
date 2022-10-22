@@ -9,7 +9,7 @@ html {
 }
 body {
     scroll-behavior: smooth;
-    
+
     overflow-x: hidden;
 
     background-color: #F5F5F5;
@@ -23,3 +23,8 @@ body { margin: 0;}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  margin: 0;
+  padding: 0;
+}

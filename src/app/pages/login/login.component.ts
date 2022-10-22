@@ -39,8 +39,15 @@ export class LoginComponent implements OnInit {
     this.api.post("auth", body).subscribe( response => {
       let date = new Date();
       let token = response as Token;
+
+      // cookie
       date.setHours(date.getHours() + 4);
       this.cookie.set("token", token.token, date)
+
+      // localstorage
+      var currentUser = { name: token.user, id: token.userId };
+      localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
       this.router.navigateByUrl("")
     },
     error => { this.snackbar.error("Usuário ou senha inválidos.")}

@@ -1,3 +1,5 @@
+
 export const environment = {
-  production: true
-};
+        production: true,
+        API_URL: "https://criasdoset.up.railway.app/api/"
+    };

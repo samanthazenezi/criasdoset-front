@@ -13,20 +13,20 @@
               <h2>Conecte-se no sistema</h2>
           </div>
 
-          <form formGroup="formLogin" (ngSubmit)="salvar()" class="example-form">
+          <form [formGroup]="formLogin" class="example-form">
               <mat-form-field class="example-full-width" appearance="fill">
                   <mat-label>E-mail</mat-label>
-                  <input matInput placeholder="Ex. email@email.com">
+                  <input matInput placeholder="Ex. email@email.com" formControlName="email">
               </mat-form-field>
 
               <mat-form-field class="example-full-width" appearance="fill">
                   <mat-label>Password</mat-label>
-                  <input matInput placeholder="Ex. password">
+                  <input matInput placeholder="Ex. password" formControlName="password">
               </mat-form-field>
           </form>
           <p>Esqueceu sua senha?</p>
           <div class="buttons">
-              <button mat-flat-button color="accent">Entrar</button>
+              <button (click)="salvar()" mat-flat-button color="accent">Entrar</button>
               <p>ou</p>
               <button mat-stroked-button>Cadastre-se</button>
           </div>

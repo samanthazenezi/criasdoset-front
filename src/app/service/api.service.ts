@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +9,11 @@ import { Injectable } from '@angular/core';
 
 export class ApiService {
 
-  constructor( private http: HttpClient) { }
-  url = "https://recipes-api-production-2d9d.up.railway.app/api/";
+  constructor( private http: HttpClient, private cookie: CookieService) { }
+  url = environment.API_URL
 
   get<T>(rota: string) {
-    let token = localStorage.getItem("token")
+    let token = this.cookie.get("token")
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
@@ -19,7 +21,7 @@ export class ApiService {
   }
 
   post<T>(rota: string, body: any) {
-    let token = localStorage.getItem("token")
+    let token = this.cookie.get("token")
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
@@ -27,7 +29,7 @@ export class ApiService {
   }
 
   delete<T>(rota: string) {
-    let token = localStorage.getItem("token")
+    let token = this.cookie.get("token")
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })
@@ -35,7 +37,7 @@ export class ApiService {
   }
 
   put<T>(rota: string, body: any) {
-    let token = localStorage.getItem("token")
+    let token = this.cookie.get("token")
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     })

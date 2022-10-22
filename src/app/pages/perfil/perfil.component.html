@@ -10,27 +10,27 @@
                 <p>Bruno Araujo</p>
                 <p>Platô</p>
             </div>
-            <form formGroup="formLogin" class="example-form">
+            <form [formGroup]="formPerfil" class="example-form">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Nome</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="nome">
                 </mat-form-field>
-        
+
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Telefone</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="telefone">
                 </mat-form-field>
-        
+
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>E-mail</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="email">
                 </mat-form-field>
-        
+
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Setor</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="setor">
                 </mat-form-field>
-    
+
             </form>
         </div>
     </div>
@@ -63,7 +63,7 @@
                     <td class="uso">Em uso</td>
                 </tr>
             </div>
-        
+
         </div>
         <mat-paginator [length]="100"
                   [pageSize]="10"

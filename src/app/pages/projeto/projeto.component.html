@@ -3,27 +3,27 @@
 <div class="container-perfil card-shadow">
     <h2>Novo Projeto</h2>
     <div class="info-pessoais">
-        <form formGroup="formLogin" class="example-form">
+        <form [formGroup]="formProjeto" class="example-form">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Nome do projeto</mat-label>
-                <input matInput>
+                <input matInput formControlName="nomeProjeto">
             </mat-form-field>
-    
+
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Empresa</mat-label>
-                <input matInput>
+                <input matInput formControlName="empresa">
             </mat-form-field>
-    
+
             <mat-form-field appearance="fill">
                 <mat-label>Data de ínicio</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input matInput [matDatepicker]="picker" formControlName="data">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-    
+
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Descrição</mat-label>
-                <textarea matInput placeholder="Ex. Projeto feito na Bahia"></textarea>
+                <textarea matInput placeholder="Ex. Projeto feito na Bahia" formControlName="descricao"></textarea>
             </mat-form-field>
         </form>
     </div>

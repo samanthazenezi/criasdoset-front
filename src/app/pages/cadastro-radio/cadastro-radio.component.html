@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<app-title title="Cadastro de rádios"></app-title>
+<div class="container-radios">
+    <form [formGroup]="formRadios" (ngSubmit)="salvar()" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Número do rádio</mat-label>
+            <input matInput formControlName="numero">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nome colaborador</mat-label>
+            <input matInput formControlName="nomeColaborador">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email colaborador</mat-label>
+            <input matInput formControlName="emailColaborador">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Telefone colaborador</mat-label>
+            <input matInput formControlName="phoneColaborador">
+        </mat-form-field>
+
+        <div class="buttons">
+          <button mat-flat-button type="submit" color="accent">Salvar</button>
+          <button mat-stroked-button [routerLink]="['/']">Cancelar</button>
+      </div>
+    </form>
+</div>

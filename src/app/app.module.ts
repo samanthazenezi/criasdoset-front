@@ -24,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CookieService } from 'ngx-cookie-service';
+import { PasswordComponent } from './pages/password/password.component';
+import { CadastroRadioComponent } from './pages/cadastro-radio/cadastro-radio.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponent,
     PerfilComponent,
     ProjetoComponent,
-    UserComponent
+    UserComponent,
+    PasswordComponent,
+    CadastroRadioComponent
   ],
   imports: [
     BrowserModule,

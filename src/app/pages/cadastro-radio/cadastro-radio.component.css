@@ -1,0 +1,30 @@
+.container-radios {
+    background-color: #fff;
+
+    width: 126.9rem;
+    height: auto;
+    
+    border-radius: 1.5rem;
+
+    margin: 5rem auto;
+
+    padding: 3rem 2rem;
+}
+.example-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.mat-form-field {
+    width: 50rem;
+}
+.buttons {
+    margin-top: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 33rem;
+}

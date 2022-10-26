@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/service/api.service';
 import { SnackBarService } from 'src/app/service/snack-bar.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-password',
@@ -18,18 +19,19 @@ export class PasswordComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private snackbar: SnackBarService) { }
+    private snackbar: SnackBarService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
-
+  
   salvar(){
     let body = new Password();
 
-    body.password = this.formPassword.controls.password.value;
-    body.confirmPassword = this.formPassword.controls.confirmPassword.value;
+    body.token = this.route.snapshot.paramMap.get('token');
+    body.password = this.formPassword.controls.confirmPassword.value;
 
-    this.api.post("api/user/active", body).subscribe( sucess => {
+    this.api.post("user/active", body).subscribe( sucess => {
       this.snackbar.sucess("Senha cadastrada com sucesso")
     }, error => this.snackbar.error("Erro ao cadastrar senha.")
     )

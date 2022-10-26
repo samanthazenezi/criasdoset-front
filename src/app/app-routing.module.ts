@@ -1,3 +1,4 @@
+import { PasswordComponent } from './pages/password/password.component';
 import { ControleitensComponent } from './pages/controleitens/controleitens.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: "cadastro/usuario", component: UserComponent, canActivate: [AutenticacaoGuard] },
   { path: "cadastro/projeto", component: ProjetoComponent, canActivate: [AutenticacaoGuard] },
   { path: "cadastro/item", component: ItemComponent, canActivate: [AutenticacaoGuard] },
-  { path: "controle/itens", component: ControleitensComponent, canActivate: [AutenticacaoGuard] }
+  { path: "controle/itens", component: ControleitensComponent, canActivate: [AutenticacaoGuard] },
+  { path: "usuario/ativacao/:token", component: PasswordComponent}
 ];
 
 @NgModule({

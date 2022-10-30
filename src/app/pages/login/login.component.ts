@@ -4,9 +4,7 @@ import { Router } from '@angular/router';
 import { Login } from 'src/app/model/login.model';
 import { Token } from 'src/app/model/token.model';
 import { ApiService } from 'src/app/service/api.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { CookieService } from 'ngx-cookie-service';
-import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +21,6 @@ export class LoginComponent implements OnInit {
   constructor(
     private api: ApiService,
     private router: Router,
-    private snackbar: SnackBarService,
     private cookie: CookieService) { }
 
   ngOnInit(): void {
@@ -50,7 +47,7 @@ export class LoginComponent implements OnInit {
 
       this.router.navigateByUrl("")
     },
-    error => { this.snackbar.error("Usuário ou senha inválidos.")}
+    error => { console.log("Usuário ou senha inválidos.")}
     )
   }
 

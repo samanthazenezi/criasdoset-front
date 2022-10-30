@@ -11,8 +11,7 @@ export class AutenticacaoGuard implements CanActivate {
 
   constructor(
     private cookie: CookieService,
-    private route: Router,
-    private _snackBar: MatSnackBar){}
+    private route: Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -22,13 +21,11 @@ export class AutenticacaoGuard implements CanActivate {
       if (token) {
         return true
       } else {
-        this.openSnackBar("Sua sessão expirou! Faça o login novamente.", "Ok")
+        // this.openSnackBar("Sua sessão expirou! Faça o login novamente.", "Ok")
         this.route.navigateByUrl("login")
         return false
       }
   }
 
-  openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, { duration: 5000 });
-  }
+ 
 }

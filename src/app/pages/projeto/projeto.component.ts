@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Projeto } from 'src/app/model/projeto.model';
 import { ApiService } from 'src/app/service/api.service';
-import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-projeto',
@@ -19,8 +18,7 @@ export class ProjetoComponent implements OnInit {
   });
 
   constructor(
-    private api: ApiService,
-    private snackbar: SnackBarService) { }
+    private api: ApiService) { }
 
   ngOnInit(): void {
   }
@@ -34,8 +32,8 @@ export class ProjetoComponent implements OnInit {
     body.description = this.formProjeto.controls.descricao.value;
 
     this.api.post("project", body).subscribe( response => {
-      this.snackbar.sucess("Cadastro de projeto realizado com sucesso.")
-    }, error => this.snackbar.error("Erro ao cadastrar projeto.")
+      // this.snackbar.sucess("Cadastro de projeto realizado com sucesso.")
+    }, error => console.log("Erro ao cadastrar projeto.")
     )
 
     this.formProjeto.reset();

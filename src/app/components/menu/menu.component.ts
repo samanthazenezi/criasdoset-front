@@ -17,4 +17,14 @@ export class MenuComponent implements OnInit {
     this.username = user.name;
   }
 
+  openClose(){
+    document.getElementById("botao-cadastro")?.classList.toggle("visivel")
+  }
+  openCloseMobile(){
+    document.getElementById("mobile")?.classList.toggle("visivel")
+  }
+  openCloseMobile2(){
+    document.getElementById("mobile2")?.classList.toggle("visivel")
+  }
+
 }

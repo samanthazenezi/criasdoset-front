@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Item } from 'src/app/model/item.model';
 import { ApiService } from 'src/app/service/api.service';
-import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-item',
@@ -18,9 +16,7 @@ export class ItemComponent implements OnInit {
     setor: new FormControl('', [Validators.required])
   });
 
-  constructor(
-    private api: ApiService,
-    private snackbar: SnackBarService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
@@ -33,8 +29,8 @@ export class ItemComponent implements OnInit {
     body.sector = this.formItem.controls.setor.value;
 
     this.api.post("item", body).subscribe( response => {
-      this.snackbar.sucess("Item cadastrado com sucesso.")
-    }, error => this.snackbar.error("Erro ao cadastrar item.")
+      // this.snackbar.sucess("Item cadastrado com sucesso.")
+    }, error => console.log("Erro ao cadastrar item.")
     )
 
     this.formItem.reset();

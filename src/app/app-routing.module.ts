@@ -12,13 +12,12 @@ import { UserComponent } from './pages/user/user.component';
 import { AutenticacaoGuard } from './guard/autenticacao.guard';
 
 const routes: Routes = [
-  { path: "", component: HomeComponent, canActivate: [AutenticacaoGuard] },
   { path: "login", component: LoginComponent },
   { path: "perfil", component: PerfilComponent, canActivate: [AutenticacaoGuard] },
   { path: "cadastro/usuario", component: UserComponent, canActivate: [AutenticacaoGuard] },
   { path: "cadastro/projeto", component: ProjetoComponent, canActivate: [AutenticacaoGuard] },
   { path: "cadastro/item", component: ItemComponent, canActivate: [AutenticacaoGuard] },
-  { path: "controle/itens", component: ControleitensComponent, canActivate: [AutenticacaoGuard] },
+  { path: "", component: ControleitensComponent, canActivate: [AutenticacaoGuard] },
   { path: "usuario/ativacao/:token", component: PasswordComponent},
   { path: "cadastro/radio", component: CadastroRadioComponent, canActivate: [AutenticacaoGuard]}
 ];

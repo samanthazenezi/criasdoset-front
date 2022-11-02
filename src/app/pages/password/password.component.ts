@@ -2,7 +2,7 @@ import { Password } from './../../model/password.model';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/service/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-password',
@@ -18,11 +18,12 @@ export class PasswordComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
-  
+
   salvar(){
     let body = new Password();
 
@@ -30,10 +31,11 @@ export class PasswordComponent implements OnInit {
     body.password = this.formPassword.controls.confirmPassword.value;
 
     this.api.post("user/active", body).subscribe( sucess => {
-      // this.snackbar.sucess("Senha cadastrada com sucesso")
+      console.log("Senha cadastrada com sucesso")
+      this.router.navigateByUrl("/login")
     }, error => console.log("Erro ao cadastrar senha.")
     )
-    
+
     this.formPassword.reset();
   }
 

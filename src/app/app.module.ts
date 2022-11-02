@@ -21,7 +21,7 @@ import { TitleComponent } from './components/title/title.component';
 import { AlertSucessComponent } from './components/alert-sucess/alert-sucess.component';
 import { AlertErroComponent } from './components/alert-erro/alert-erro.component';
 import { AlertAtencaoComponent } from './components/alert-atencao/alert-atencao.component';
-
+import { ErroComponent } from './pages/erro/erro.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { AlertAtencaoComponent } from './components/alert-atencao/alert-atencao.
     TitleComponent,
     AlertSucessComponent,
     AlertErroComponent,
-    AlertAtencaoComponent
+    AlertAtencaoComponent,
+    ErroComponent
   ],
   imports: [
     BrowserModule,

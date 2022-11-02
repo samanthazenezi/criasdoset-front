@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PasswordComponent implements OnInit {
 
+  erro = false;
+
   formPassword = new FormGroup({
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required])
@@ -25,18 +27,28 @@ export class PasswordComponent implements OnInit {
   }
 
   salvar(){
-    let body = new Password();
 
-    body.token = this.route.snapshot.paramMap.get('token');
-    body.password = this.formPassword.controls.confirmPassword.value;
+    let password = this.formPassword.controls.password.value;
+    let confPassword = this.formPassword.controls.confirmPassword.value;
 
-    this.api.post("user/active", body).subscribe( sucess => {
-      console.log("Senha cadastrada com sucesso")
-      this.router.navigateByUrl("/login")
-    }, error => console.log("Erro ao cadastrar senha.")
-    )
+    if(password != confPassword) {
+      this.erro = true;
+    } else {
+      this.erro = false;
+      let body = new Password();
 
-    this.formPassword.reset();
+      body.token = this.route.snapshot.paramMap.get('token');
+      body.password = this.formPassword.controls.confirmPassword.value;
+
+      this.api.post("user/active", body).subscribe( sucess => {
+          console.log("Senha cadastrada com sucesso") // substituir por snackbar
+          this.router.navigateByUrl("/login")
+        }, error => console.log("Erro ao cadastrar senha.")
+      )
+
+      this.formPassword.reset();
+    }
+    
   }
 
 }

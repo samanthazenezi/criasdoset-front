@@ -1,55 +1,115 @@
- <app-menu></app-menu>
+<app-menu></app-menu>
+<app-title title="Perfil > Bruno Araujo"></app-title>
 
-
-<!--<div class="perfil">
-    <div class="container-perfil card-shadow">
-        <h2>Informações</h2>
-        <div class="info-pessoais">
-            <div class="infos">
-                <img src="assets/imagem-user.png" alt="image-person">
-            </div>
-            <form [formGroup]="formPerfil" class="example-form">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Nome</mat-label>
-                    <input matInput formControlName="nome">
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Telefone</mat-label>
-                    <input matInput formControlName="telefone">
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>E-mail</mat-label>
-                    <input matInput formControlName="email">
-                </mat-form-field>
-
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Setor</mat-label>
-                    <input matInput formControlName="setor">
-                </mat-form-field>
-
-            </form>
+<div class="bg-white py-12 mt-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-center items-center">
+            <img src="assets/imagem-user.png" class="w-40 h-40">
         </div>
-    </div>
-    <div class="table card-shadow">
-        <div class="conteudo-table">
-            <th>Solicitações</th>
-            <div *ngFor="let item of perfil.orders" class="coluns">
-                <tr>
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.ItemName }}</td>
-                    <td>{{ item.AllocationDate }}</td>
-                    <td>{{ item.status }}</td>
-                </tr>
-            </div>
-
+  
+        <div class="mt-10 mx-auto max-w-3xl">
+            <dl class="space-y-10 ">
+                <form [formGroup]="formPerfil" class="mt-8 space-y-6" action="#" method="POST">
+                    <input type="hidden" name="remember" value="true">
+                    <div class="-space-y-px rounded-md">
+                        <div class="py-2">
+                            <label for="email-address" class="sr-only">Nome</label>
+                            <input formControlName="nome" id="email-address" name="nome" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Nome">
+                        </div>
+                        <div class="py-2">
+                            <label for="email-address" class="sr-only">E-mail</label>
+                            <input formControlName="email" id="email-address" name="E-mail" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="E-mail">
+                        </div>
+                        <div class="py-2">
+                            <label for="email-address" class="sr-only">Telefone</label>
+                            <input formControlName="telefone" id="email-address" name="telefone" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Telefone">
+                        </div>
+                        <div class="py-2">
+                            <label for="email-address" class="sr-only">Departamento</label>
+                            <input formControlName="setor" id="email-address" name="departamento" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Departamento">
+                        </div>
+                    </div>
+                </form>
+            </dl>
         </div>
-        <mat-paginator [length]="100"
-                  [pageSize]="10"
-                  aria-label="Select page">
-        </mat-paginator>
     </div>
 </div>
 
- -->
+<div *ngFor="let item of perfil.orders" class="overflow-x-auto relative mt-10 pb-10">
+    <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="py-3 px-6">
+                    No.
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Item
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Data
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b">
+                <th scope="row" class="py-4 px-6 font-medium text-gray-900">
+                    {{ item.id }}
+                </th>
+                <td class="py-4 px-6">
+                    {{ item.ItemName }}
+                </td>
+                <td class="py-4 px-6">
+                    {{ item.AllocationDate }}
+                </td>
+                <td class="py-4 px-6">
+                    {{ item.status }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+        <div class="flex flex-1 justify-between sm:hidden">
+          <a href="#" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</a>
+          <a href="#" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</a>
+        </div>
+        <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+          <div>
+            <p class="text-sm text-gray-700">
+              Showing
+              <span class="font-medium">1</span>
+              to
+              <span class="font-medium">10</span>
+              of
+              <span class="font-medium">97</span>
+              results
+            </p>
+          </div>
+          <div>
+            <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+              <a href="#" class="relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">
+                <span class="sr-only">Previous</span>
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" aria-current="page" class="relative z-10 inline-flex items-center border border-indigo-500 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-600 focus:z-20">1</a>
+              <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">2</a>
+              <a href="#" class="relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 md:inline-flex">3</a>
+              <span class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700">...</span>
+              <a href="#" class="relative hidden items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 md:inline-flex">8</a>
+              <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">9</a>
+              <a href="#" class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">10</a>
+              <a href="#" class="relative inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20">
+                <span class="sr-only">Next</span>
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                </svg>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+</div>

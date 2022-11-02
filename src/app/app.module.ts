@@ -18,6 +18,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { PasswordComponent } from './pages/password/password.component';
 import { CadastroRadioComponent } from './pages/cadastro-radio/cadastro-radio.component';
 import { TitleComponent } from './components/title/title.component';
+import { ErroComponent } from './pages/erro/erro.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { TitleComponent } from './components/title/title.component';
     UserComponent,
     PasswordComponent,
     CadastroRadioComponent,
-    TitleComponent
+    TitleComponent,
+    ErroComponent
   ],
   imports: [
     BrowserModule,

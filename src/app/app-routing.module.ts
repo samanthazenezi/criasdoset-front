@@ -1,3 +1,4 @@
+import { CadastroRadioComponent } from './pages/cadastro-radio/cadastro-radio.component';
 import { PasswordComponent } from './pages/password/password.component';
 import { ControleitensComponent } from './pages/controleitens/controleitens.component';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "cadastro/projeto", component: ProjetoComponent, canActivate: [AutenticacaoGuard] },
   { path: "cadastro/item", component: ItemComponent, canActivate: [AutenticacaoGuard] },
   { path: "controle/itens", component: ControleitensComponent, canActivate: [AutenticacaoGuard] },
-  { path: "usuario/ativacao/:token", component: PasswordComponent}
+  { path: "usuario/ativacao/:token", component: PasswordComponent},
+  { path: "cadastro/radio", component: CadastroRadioComponent, canActivate: [AutenticacaoGuard]}
 ];
 
 @NgModule({

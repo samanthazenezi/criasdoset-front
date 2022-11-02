@@ -7,29 +7,21 @@ import { ApiService } from '../service/api.service';
   providedIn: 'root'
 })
 export class UsertokenGuard implements CanActivate {
-
   constructor(
     private api: ApiService,
     private router: Router
   ) {}
 
-  canActivate(
+  async canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): Promise<boolean> {
       let token = route.paramMap.get('token');
-      const result = this.api.post<boolean>("user/valid-token", { token: token })      
-      .subscribe( sucess => {
-        return true;
-      }, error => { 
-        return false;
-      })
+      var result = await this.api.post<boolean>("user/valid-token", { token: token }).toPromise()
+        .then(response => { return true }, err => { return false });
 
       if (!result) {
-        this.router.navigateByUrl("erro");
+        this.router.navigate(['/erro']);
       }
-      else {
-        return true;
-      }
+      return result;
   }
-  
 }

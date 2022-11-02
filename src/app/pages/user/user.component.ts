@@ -33,10 +33,17 @@ export class UserComponent implements OnInit {
     body.role = this.formUser.controls.funcao.value;
 
     this.api.post("user", body).subscribe( response => {
-      // this.snackbar.sucess("Usuário cadastrado com sucesso.")
-    }, error => console.log("Erro ao cadastrar usuário."))
+      this.sucess
+    }, error => this.erro)
 
     this.formUser.reset();
   }
 
+
+  sucess(){
+    document.getElementById('sucesso').classList.toggle('visivel');
+  }
+  erro(){
+    document.getElementById('erro').classList.toggle('visivel');
+  }
 }

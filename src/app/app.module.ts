@@ -18,6 +18,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { PasswordComponent } from './pages/password/password.component';
 import { CadastroRadioComponent } from './pages/cadastro-radio/cadastro-radio.component';
 import { TitleComponent } from './components/title/title.component';
+import { AlertSucessComponent } from './components/alert-sucess/alert-sucess.component';
+import { AlertErroComponent } from './components/alert-erro/alert-erro.component';
+import { AlertAtencaoComponent } from './components/alert-atencao/alert-atencao.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import { TitleComponent } from './components/title/title.component';
     UserComponent,
     PasswordComponent,
     CadastroRadioComponent,
-    TitleComponent
+    TitleComponent,
+    AlertSucessComponent,
+    AlertErroComponent,
+    AlertAtencaoComponent
   ],
   imports: [
     BrowserModule,

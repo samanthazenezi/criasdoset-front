@@ -1,6 +1,6 @@
 export class Projeto {
   name: string
   company: string
-  creationDate: Date
+  creationDate: string
   description: string
 }

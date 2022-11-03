@@ -28,7 +28,7 @@ export class ProjetoComponent implements OnInit {
 
     body.name = this.formProjeto.controls.nomeProjeto.value;
     body.company = this.formProjeto.controls.empresa.value;
-    body.creationDate = new Date(this.formProjeto.controls.data.value);
+    body.creationDate = this.formProjeto.controls.data.value;
     body.description = this.formProjeto.controls.descricao.value;
 
     this.api.post("project", body).subscribe( response => {

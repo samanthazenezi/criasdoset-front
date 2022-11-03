@@ -6,21 +6,29 @@
   <div class="p-10 flex flex-wrap justify-center gap-5 lg:gap-40 lg:flex-row">
     <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
       <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Envio de formulário</h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-          Read more
-      </a>
+      <p class="mb-3 font-normal text-gray-700">Cadastre um e-mail para receber um fornulário de rádio.</p>
+      <button (click)="addEmail()" class=" cursor-pointer inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+          Adicionar e-mail
+      </button>
+      <div *ngIf="hidden">
+        <div class="py-2">
+            <label for="email-address" class="sr-only">E-mail</label>
+            <input id="email-address" name="E-mail" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="E-mail">
+        </div>
+        <button (click)="enviarEmail()">Enviar</button>
+        <button (click)="cancelar()">Cancelar</button>
+      </div>
     </div>
 
     <div class="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
       <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology acquisitions 2021</h5>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Cadastro manual</h5>
       </a>
-      <p class="mb-3 font-normal text-gray-700">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      <a href="#" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-          Read more
+      <p class="mb-3 font-normal text-gray-700">Cadastre você mesmo um colaborador para utilizar um rádio.</p>
+      <a [routerLink]="['/cadastro/radio']" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+          Ir para o formulário
       </a>
     </div>
   </div>

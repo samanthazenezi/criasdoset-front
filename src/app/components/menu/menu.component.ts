@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-menu',
@@ -9,7 +11,10 @@ export class MenuComponent implements OnInit {
 
   username: string;
 
-  constructor() { }
+  constructor(
+    private cookie: CookieService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     var jsonString = localStorage.getItem('currentUser');
@@ -25,6 +30,10 @@ export class MenuComponent implements OnInit {
   }
   openCloseMobile2(){
     document.getElementById("mobile2")?.classList.toggle("visivel")
+  }
+  sair(){
+    this.router.navigateByUrl("/login");
+    this.cookie.delete("token");
   }
 
 }

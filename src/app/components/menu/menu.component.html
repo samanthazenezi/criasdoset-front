@@ -37,16 +37,22 @@
         </div>
         <div>
             <div class="pt-4 pb-3" >
-                <div class="flex items-center px-5">
-                    <div class="flex-shrink-0">
+                <div class="flex items-center gap-3 px-5">
+                    <div class="flex items-center px-5">
+                      <div class="flex-shrink-0">
                         <img class="h-10 w-10 rounded-full" src="assets/imagem-user.png">
                     </div>
                     <div class="ml-3">
                         <a class="text-base font-medium leading-none text-white" [routerLink]="['/perfil']">{{ username }}</a>
                     </div>
+                    </div>
+                    <a (click)="sair()" class="cursor-pointer text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sair</a>
                 </div>
+
             </div>
-            </div>
+          </div>
+
+
 
             <div class="-mr-2 flex md:hidden" (click)="openCloseMobile()">
                 <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">

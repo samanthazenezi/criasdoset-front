@@ -33,17 +33,10 @@ export class UserComponent implements OnInit {
     body.role = this.formUser.controls.funcao.value;
 
     this.api.post("user", body).subscribe( response => {
-      this.sucess
-    }, error => this.erro)
+      console.log("sucesso")
+    }, error => console.log("erro"))
 
     this.formUser.reset();
   }
 
-
-  sucess(){
-    document.getElementById('sucesso').classList.toggle('visivel');
-  }
-  erro(){
-    document.getElementById('erro').classList.toggle('visivel');
-  }
 }

@@ -22,6 +22,7 @@ import { AlertSucessComponent } from './components/alert-sucess/alert-sucess.com
 import { AlertErroComponent } from './components/alert-erro/alert-erro.component';
 import { AlertAtencaoComponent } from './components/alert-atencao/alert-atencao.component';
 import { ErroComponent } from './pages/erro/erro.component';
+import { FormradioComponent } from './pages/formradio/formradio.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ErroComponent } from './pages/erro/erro.component';
     AlertSucessComponent,
     AlertErroComponent,
     AlertAtencaoComponent,
-    ErroComponent
+    ErroComponent,
+    FormradioComponent
   ],
   imports: [
     BrowserModule,

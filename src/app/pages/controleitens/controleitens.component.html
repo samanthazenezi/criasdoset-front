@@ -9,16 +9,24 @@
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Envio de formulário</h5>
       </a>
       <p class="mb-3 font-normal text-gray-700">Cadastre um e-mail para receber um fornulário de rádio.</p>
-      <button (click)="addEmail()" class=" cursor-pointer inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-          Adicionar e-mail
+      <button (click)="addEmail()" type="button" class="group relative flex w-full justify-center rounded-md border border-transparent bg-amber-400 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+        </span>
+        Adicionar e-mail
       </button>
+
       <div *ngIf="hidden">
-        <div class="py-2">
+        <div class="py-8">
+          <form [formGroup]="formRadio">
             <label for="email-address" class="sr-only">E-mail</label>
-            <input id="email-address" name="E-mail" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="E-mail">
+            <input formControlName="email" id="email-address" name="E-mail" type="email" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="E-mail">
+          </form>
         </div>
-        <button (click)="enviarEmail()">Enviar</button>
-        <button (click)="cancelar()">Cancelar</button>
+        <div class="flex gap-36">
+          <button  (click)="enviarEmail()" type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700">Enviar</button>
+          <button (click)="cancelar()" type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Cancelar</button>
+        </div>
+
       </div>
     </div>
 
@@ -27,9 +35,11 @@
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Cadastro manual</h5>
       </a>
       <p class="mb-3 font-normal text-gray-700">Cadastre você mesmo um colaborador para utilizar um rádio.</p>
-      <a [routerLink]="['/cadastro/radio']" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-          Ir para o formulário
-      </a>
+      <button [routerLink]="['/cadastro/radio']" type="button" class="group relative flex w-full justify-center rounded-md border border-transparent bg-amber-400 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-600 focus:ring-offset-2">
+        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+        </span>
+        Ir para o formulário
+      </button>
     </div>
   </div>
 

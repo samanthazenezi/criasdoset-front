@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-controleitens',
@@ -9,7 +11,11 @@ export class ControleitensComponent implements OnInit {
 
   hidden = false;
 
-  constructor() { }
+  formRadio = new FormGroup({
+    email: new FormControl('', [Validators.required])
+  });
+
+  constructor( private api: ApiService ) { }
 
   ngOnInit(): void {
   }
@@ -19,13 +25,20 @@ export class ControleitensComponent implements OnInit {
   }
 
   enviarEmail(){
+    let emailform = this.formRadio.controls.email.value;
+    let body = { email: emailform}
 
+    this.api.post("request/radio", body).subscribe( sucess => {
+      console.log("form enviado")
+      this.formRadio.reset();
+    },
+    error => { console.log("errooor")} )
   }
 
   cancelar(){
-    this.hidden = false; 
+    this.hidden = false;
 
-    // reset form
+    this.formRadio.reset();
   }
 
 

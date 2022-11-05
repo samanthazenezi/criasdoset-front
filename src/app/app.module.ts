@@ -23,6 +23,7 @@ import { AlertErroComponent } from './components/alert-erro/alert-erro.component
 import { AlertAtencaoComponent } from './components/alert-atencao/alert-atencao.component';
 import { ErroComponent } from './pages/erro/erro.component';
 import { FormradioComponent } from './pages/formradio/formradio.component';
+import { SucessRequerimentoComponent } from './pages/sucess-requerimento/sucess-requerimento.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FormradioComponent } from './pages/formradio/formradio.component';
     AlertErroComponent,
     AlertAtencaoComponent,
     ErroComponent,
-    FormradioComponent
+    FormradioComponent,
+    SucessRequerimentoComponent
   ],
   imports: [
     BrowserModule,

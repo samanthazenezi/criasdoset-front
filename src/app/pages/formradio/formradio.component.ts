@@ -63,7 +63,7 @@ export class FormradioComponent implements OnInit {
       body.accessories.push("Fone")
     }
 
-    this.api.post("radio/" + token , body).subscribe( sucess =>
+    this.api.post("radio/" + token, body).subscribe( sucess =>
       console.log("sucesso!"),
       erro => ( console.log("erro!"))
     )

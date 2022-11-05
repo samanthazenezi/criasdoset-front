@@ -11,7 +11,7 @@
                 </div>
                 <div class="py-2">
                     <label for="email-address" class="sr-only">E-mail</label>
-                    <input id="email-address" name="E-mail" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="E-mail">
+                    <input formControlName="emailColaborador" id="email-address" name="E-mail" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="E-mail">
                 </div>
                 <div class="py-2">
                     <label for="email-address" class="sr-only">Telefone</label>
@@ -19,18 +19,14 @@
                 </div>
                 <div class="py-2">
                     <label for="email-address" class="sr-only">Departamento</label>
-                    <input id="email-address" name="departamento" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Departamento">
+                    <input formControlName="departamento" id="email-address" name="departamento" type="text" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Departamento">
                 </div>
                 <div class="py-2">
                     <label for="password" class="sr-only">Número do rádio</label>
-                    <input formControlName="numero" id="password" name="Número do rádio" type="text" autocomplete="current-password" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Número do rádio">
-                </div>
-                <div class="py-2">
-                    <label for="email-address" class="sr-only">Data</label>
-                    <input id="email-address" name="data" type="date" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Data">
+                    <input formControlName="numeroRadio" id="password" name="Número do rádio" type="text" autocomplete="current-password" required class="relative block w-full appearance-none rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-amber-500 focus:outline-none focus:ring-amber-500 sm:text-sm" placeholder="Número do rádio">
                 </div>
             </div>
-    
+
             <div class="overflow-hidden ">
                 <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                     <fieldset>
@@ -39,7 +35,7 @@
                         <div class="mt-4 space-y-4">
                             <div class="flex items-start">
                                 <div class="flex h-5 items-center">
-                                    <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                    <input formControlName="capa" id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="comments" class="font-medium text-gray-700">Capa</label>
@@ -47,7 +43,7 @@
                             </div>
                             <div class="flex items-start">
                                 <div class="flex h-5 items-center">
-                                    <input id="candidates" name="candidates" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                    <input formControlName="antena" id="candidates" name="candidates" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="candidates" class="font-medium text-gray-700">Antena</label>
@@ -55,7 +51,7 @@
                             </div>
                             <div class="flex items-start">
                                 <div class="flex h-5 items-center">
-                                    <input id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                    <input formControlName="cordao" id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="offers" class="font-medium text-gray-700">Cordão</label>
@@ -63,7 +59,7 @@
                             </div>
                             <div class="flex items-start">
                                 <div class="flex h-5 items-center">
-                                    <input id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                    <input formControlName="clip" id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="offers" class="font-medium text-gray-700">Clip</label>
@@ -71,7 +67,7 @@
                             </div>
                             <div class="flex items-start">
                                 <div class="flex h-5 items-center">
-                                    <input id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                                    <input formControlName="fone" id="offers" name="offers" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
                                 </div>
                                 <div class="ml-3 text-sm">
                                     <label for="offers" class="font-medium text-gray-700">Fone</label>
@@ -92,6 +88,6 @@
                     Salvar
                 </button>
             </div>
-        </form>    
-    </div> 
+        </form>
+    </div>
 </div>

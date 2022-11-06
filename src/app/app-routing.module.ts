@@ -14,6 +14,7 @@ import { UsertokenGuard } from './guard/usertoken.guard';
 import { ErroComponent } from './pages/erro/erro.component';
 import { FormradioComponent } from './pages/formradio/formradio.component';
 import { ItemGuard } from './guard/item.guard';
+import { SucessRequerimentoComponent } from './pages/sucess-requerimento/sucess-requerimento.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: "usuario/ativacao/:token", component: PasswordComponent, canActivate: [UsertokenGuard]},
   { path: "cadastro/radio", component: CadastroRadioComponent, canActivate: [AutenticacaoGuard]},
   { path: "erro", component: ErroComponent},
-  { path: "requerimento/radio/:token", component: FormradioComponent, canActivate: [ItemGuard]}
+  { path: "requerimento/radio/:token", component: FormradioComponent, canActivate: [ItemGuard]},
+  { path: "sucesso", component: SucessRequerimentoComponent},
 ];
 
 @NgModule({

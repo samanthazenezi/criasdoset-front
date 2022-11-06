@@ -1,4 +1,5 @@
 export class Radio {
+  id: string
   name: string
   email: string
   phone: string
@@ -6,4 +7,5 @@ export class Radio {
   radioNumber: string
   registerDate: Date
   accessories: string[]
+  status: number
 }

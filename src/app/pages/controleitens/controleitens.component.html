@@ -49,13 +49,13 @@
       <thead class="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
               <th scope="col" class="py-3 px-6">
-                  No.
-              </th>
-              <th scope="col" class="py-3 px-6">
-                  Item
+                  No. Rádio
               </th>
               <th scope="col" class="py-3 px-6">
                   Nome
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Departamento
               </th>
               <th scope="col" class="py-3 px-6">
                   Status
@@ -65,96 +65,66 @@
               </th>
           </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let radio of radios">
           <tr class="bg-white border-b">
               <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                  1
+                  {{ radio.radioNumber}}
               </th>
               <td class="py-4 px-6">
-                  Rádio
+                  {{ radio.name }}
               </td>
               <td class="py-4 px-6">
-                  Samantha
+                  {{ radio.department }}
               </td>
-              <td class="py-4 px-6">
+              <td *ngIf="radio.status == 1" class="py-4 px-6">
                   Em uso
               </td>
+              <td *ngIf="radio.status == 2" class="py-4 px-6">
+                Devolvido
+              </td>
+              <td *ngIf="radio.status == 3" class="py-4 px-6">
+                Perdido
+              </td>
               <td class="py-4 px-6">
-                  <button class="font-medium cursor-pointer text-gray-900 hover:underline">Editar</button>
+                  <button (click)="openClose(radio.id)" class="font-medium cursor-pointer text-gray-900 hover:underline">Editar</button>
               </td>
           </tr>
-          <tr class="bg-white border-b">
-            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                1
-            </th>
-            <td class="py-4 px-6">
-                Rádio
-            </td>
-            <td class="py-4 px-6">
-                Samantha
-            </td>
-            <td class="py-4 px-6">
-                Em uso
-            </td>
-            <td class="py-4 px-6">
-                <button class="font-medium cursor-pointer text-gray-900 hover:underline">Editar</button>
-            </td>
-          </tr>
-          <tr class="bg-white border-b">
-            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                1
-            </th>
-            <td class="py-4 px-6">
-                Rádio
-            </td>
-            <td class="py-4 px-6">
-                Samantha
-            </td>
-            <td class="py-4 px-6">
-                Em uso
-            </td>
-            <td class="py-4 px-6">
-                <button class="font-medium cursor-pointer text-gray-900 hover:underline">Editar</button>
-            </td>
-          </tr>
-          <tr class="bg-white border-b">
-            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                1
-            </th>
-            <td class="py-4 px-6">
-                Rádio
-            </td>
-            <td class="py-4 px-6">
-                Samantha
-            </td>
-            <td class="py-4 px-6">
-                Em uso
-            </td>
-            <td class="py-4 px-6">
-                <button class="font-medium cursor-pointer text-gray-900 hover:underline">Editar</button>
-            </td>
-          </tr>
-          <tr class="bg-white border-b">
-            <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                1
-            </th>
-            <td class="py-4 px-6">
-                Rádio
-            </td>
-            <td class="py-4 px-6">
-                Samantha
-            </td>
-            <td class="py-4 px-6">
-                Em uso
-            </td>
-            <td class="py-4 px-6">
-                <button class="font-medium cursor-pointer text-gray-900 hover:underline">Editar</button>
-            </td>
-          </tr>
-
       </tbody>
   </table>
 </div>
+
+<!-- MODAL -->
+<div *ngIf="modal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 z-10 overflow-y-auto">
+    <div class="w-80 m-auto flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+      <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+              <h3 class="text-lg font-medium  text-gray-900" id="modal-title">Alterar status</h3>
+              <div class="mt-2">
+                <form [formGroup]="formStatus">
+                  <select formControlName="status" id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5">
+                    <option value="" disabled selected hidden>Escolha uma opção</option>
+                    <option value=1>Em uso</option>
+                    <option value=2>Devolvido</option>
+                    <option value=3>Perdido</option>
+                  </select>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 flex gap-20 sm:flex sm:flex-row-reverse sm:px-6">
+          <button (click)="salvar()" type="button" class="focus:outline-none text-gray-900 bg-amber-400 hover:bg-amber-300 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Salvar</button>
+          <button (click)="openClose(null)" type="button" class="focus:outline-none text-gray-900 border border-gray-300 bg-white hover:bg-gray-200 focus:ring-4 focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
 

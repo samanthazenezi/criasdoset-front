@@ -59,13 +59,15 @@ export class CadastroRadioComponent implements OnInit {
       body.accessories.push("Fone")
     }
 
-    this.api.post("radio", body).subscribe( sucess =>
-      console.log("sucesso!"),
+    this.api.post("radio", body).subscribe( sucess => {
+      console.log("sucesso!")
+      this.router.navigateByUrl("/")
+    },
       erro => ( console.log("erro!"))
     )
 
     this.formRadios.reset()
-    this.router.navigateByUrl("/")
+
   }
 
 }

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.snackBarSucesso {
+    color: black;
+    background: #22c55e;
+    opacity: 1;
+}
+.snackBarErro {
+    color: black;
+    background: #ef4444;
+}
+.snackBarAtencao  {
+    color: black;
+    background: #fbbf24;
+}

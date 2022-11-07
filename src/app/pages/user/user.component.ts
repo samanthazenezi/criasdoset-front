@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/model/user.model';
 import { ApiService } from 'src/app/service/api.service';
+import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-user',
@@ -18,7 +19,7 @@ export class UserComponent implements OnInit {
     funcao: new FormControl('', [Validators.required])
   });
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private snackbar: SnackBarService) { }
 
   ngOnInit(): void {
   }
@@ -33,8 +34,8 @@ export class UserComponent implements OnInit {
     body.role = this.formUser.controls.funcao.value;
 
     this.api.post("user", body).subscribe( response => {
-      console.log("sucesso")
-    }, error => console.log("erro"))
+      this.snackbar.sucess("Usuário cadastrado com sucesso!")
+    }, error => this.snackbar.error("Erro ao cadastrar novo usuário!"))
 
     this.formUser.reset();
   }

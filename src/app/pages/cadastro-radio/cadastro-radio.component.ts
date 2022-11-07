@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { Router } from '@angular/router';
 import { Radio } from 'src/app/model/radio.model';
 import { ApiService } from 'src/app/service/api.service';
+import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-cadastro-radio',
@@ -27,7 +27,8 @@ export class CadastroRadioComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private router: Router) { }
+    private router: Router,
+    private snackbar: SnackBarService) { }
 
   ngOnInit(): void {
   }
@@ -60,14 +61,12 @@ export class CadastroRadioComponent implements OnInit {
     }
 
     this.api.post("radio", body).subscribe( sucess => {
-      console.log("sucesso!")
+      this.snackbar.sucess("Requerimento cadastrado com sucesso!")
       this.router.navigateByUrl("/")
     },
-      erro => ( console.log("erro!"))
+      erro => this.snackbar.error("Erro ao cadastrar requerimento!")
     )
-
+    
     this.formRadios.reset()
-
   }
-
 }

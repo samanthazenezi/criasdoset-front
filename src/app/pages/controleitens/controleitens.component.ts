@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Radio } from 'src/app/model/radio.model';
 import { ApiService } from 'src/app/service/api.service';
+import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-controleitens',
@@ -23,12 +24,12 @@ export class ControleitensComponent implements OnInit {
     status: new FormControl('', [Validators.required])
   });
 
-  constructor( private api: ApiService ) { }
+  constructor( private api: ApiService, private snackbar: SnackBarService ) { }
 
   ngOnInit(): void {
     this.api.get<Radio[]>("radio").subscribe( response => {
       this.radios = response;
-    }, erro => { console.log("erro!")})
+    }, erro => { this.snackbar.error("Erro ao salvar!")})
   }
 
   addEmail(){
@@ -40,10 +41,10 @@ export class ControleitensComponent implements OnInit {
     let body = { email: emailform}
 
     this.api.post("request/radio", body).subscribe( sucess => {
-      console.log("form enviado")
+      this.snackbar.sucess("E-mail enviado com sucesso!")
       this.formRadio.reset();
     },
-    error => { console.log("errooor")} )
+    error => { this.snackbar.error("Erro ao enviar e-mail!")} )
   }
 
   cancelar(){
@@ -71,7 +72,7 @@ export class ControleitensComponent implements OnInit {
       this.modal = false;
       window.location.reload();
       console.log("OK");
-    }, erro => { console.log("erro")})
+    }, erro => { this.snackbar.error("Erro ao alterar status!")})
   }
 
 

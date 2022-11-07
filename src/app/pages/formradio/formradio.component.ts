@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Radio } from 'src/app/model/radio.model';
 import { ApiService } from 'src/app/service/api.service';
+import { SnackBarService } from 'src/app/service/snack-bar.service';
 
 @Component({
   selector: 'app-formradio',
@@ -28,7 +29,8 @@ export class FormradioComponent implements OnInit {
   constructor(
     private api: ApiService,
     private router: Router,
-    private  route: ActivatedRoute
+    private  route: ActivatedRoute,
+    private snackbar: SnackBarService
   ) { }
 
 
@@ -64,10 +66,9 @@ export class FormradioComponent implements OnInit {
     }
 
     this.api.post("radio/" + token, body).subscribe( sucess => {
-      this.router.navigateByUrl("sucesso"),
-      console.log("sucesso!")
+      this.router.navigateByUrl("sucesso")
     },
-      erro => ( console.log("erro!"))
+      erro => ( this.snackbar.error("Erro ao cadastrar requerimento!"))
     )
 
 

@@ -24,6 +24,7 @@ import { AlertAtencaoComponent } from './components/alert-atencao/alert-atencao.
 import { ErroComponent } from './pages/erro/erro.component';
 import { FormradioComponent } from './pages/formradio/formradio.component';
 import { SucessRequerimentoComponent } from './pages/sucess-requerimento/sucess-requerimento.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { SucessRequerimentoComponent } from './pages/sucess-requerimento/sucess-
     AlertAtencaoComponent,
     ErroComponent,
     FormradioComponent,
-    SucessRequerimentoComponent
+    SucessRequerimentoComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,8 @@ import { SucessRequerimentoComponent } from './pages/sucess-requerimento/sucess-
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [ CookieService],
   bootstrap: [AppComponent]

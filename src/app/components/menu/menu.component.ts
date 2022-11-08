@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   username: string;
 
+
   constructor(
     private cookie: CookieService,
     private router: Router

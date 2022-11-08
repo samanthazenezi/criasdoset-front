@@ -71,7 +71,6 @@ export class ControleitensComponent implements OnInit {
     this.api.put('radio/' + this.idSelecionado, status).subscribe( response => {
       this.modal = false;
       window.location.reload();
-      this.snackbar.sucess("Status alterado com sucesso!");
     }, erro => { this.snackbar.error("Erro ao alterar status!")})
   }
 

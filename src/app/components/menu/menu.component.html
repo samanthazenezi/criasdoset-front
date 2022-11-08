@@ -24,9 +24,9 @@
                                 <div class=" visivel absolute right-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" id="botao-cadastro">
                                 <a class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0" [routerLink]="['/cadastro/usuario']">Cadastro Usuário</a>
 
-                                <a class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1" [routerLink]="['/cadastro/item']">Cadastro Item</a>
+                                <a *ngIf="featureFlagItem" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1" [routerLink]="['/cadastro/item']">Cadastro Item</a>
 
-                                <a class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2" [routerLink]="['/cadastro/projeto']">Cadastro Projeto</a>
+                                <a *ngIf="featureFlagProjeto" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2" [routerLink]="['/cadastro/projeto']">Cadastro Projeto</a>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +85,8 @@
                     <div class="visivel absolute right-0 z-10 mt-2 w-55 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" id="mobile2" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                         <div class="py-1" role="none">
                           <a class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-0" [routerLink]="['/cadastro/usuario']">Cadastro Usuário</a>
-                          <a class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1" [routerLink]="['/cadastro/item']">Cadastro Item</a>
-                          <a class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2" role="menuitem" tabindex="-1" id="user-menu-item-2" [routerLink]="['/cadastro/projeto']">Cadastro Projeto</a>
+                          <a *ngIf="featureFlagItem" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-1" [routerLink]="['/cadastro/item']">Cadastro Item</a>
+                          <a *ngIf="featureFlagProjeto" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="menu-item-2" role="menuitem" tabindex="-1" id="user-menu-item-2" [routerLink]="['/cadastro/projeto']">Cadastro Projeto</a>
                         </div>
                       </div>
                 </div>

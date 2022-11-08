@@ -12,6 +12,8 @@ export class MenuComponent implements OnInit {
 
   username: string;
   featureFlagPainel = environment.featureFlagPainel;
+  featureFlagItem = environment.featureFlagItem;
+  featureFlagProjeto = environment.featureFlagProjeto;
 
 
   constructor(

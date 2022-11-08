@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -10,6 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class MenuComponent implements OnInit {
 
   username: string;
+  featureFlagPainel = environment.featureFlagPainel;
 
 
   constructor(

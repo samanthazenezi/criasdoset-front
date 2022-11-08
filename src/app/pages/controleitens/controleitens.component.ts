@@ -11,6 +11,7 @@ import { SnackBarService } from 'src/app/service/snack-bar.service';
 })
 export class ControleitensComponent implements OnInit {
 
+  dropdowPesquisa = false;
   modal = false;
   hidden = false;
   radios: Radio[] = [];
@@ -51,6 +52,10 @@ export class ControleitensComponent implements OnInit {
     this.hidden = false;
 
     this.formRadio.reset();
+  }
+
+  abrirDropdow(){
+    this.dropdowPesquisa = true;
   }
 
   openClose(id: string){

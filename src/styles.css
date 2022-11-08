@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 
-.snackBarSucesso {
+.snackBarSucesso, .mat-label {
     color: black;
     background: #22c55e;
     opacity: 1;
 }
-.snackBarErro {
+
+.snackBarErro, .mat-label {
     color: black;
     background: #ef4444;
 }
@@ -16,3 +17,4 @@
     color: black;
     background: #fbbf24;
 }
+
